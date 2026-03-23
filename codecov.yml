@@ -10,12 +10,8 @@ coverage:
 
 flags:
   website:
-    paths:
-      - apps/website/
     carryforward: true
   package-2:
-    paths:
-      - packages/package-2/
     carryforward: true
 
 comment:
