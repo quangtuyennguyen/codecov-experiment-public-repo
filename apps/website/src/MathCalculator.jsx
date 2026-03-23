@@ -24,7 +24,7 @@ export default function MathCalculator({ operation, a, b }) {
       <p>
         <strong>{operation}</strong>({a}, {b}) ={' '}
         {error
-          ? <span style={{ color: 'red' }}>Error: {error}</span>
+          ? <span style={{ color: 'red' }}>Error message: {error}</span>
           : <span style={{ color: 'green' }}>{result}</span>}
       </p>
     </div>

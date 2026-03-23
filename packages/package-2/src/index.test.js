@@ -1,4 +1,4 @@
-import { average, clamp, isEven } from './index';
+import { average, clamp, isEven, sum } from './index';
 
 // ── average ───────────────────────────────────────────────────────────────────
 test("average returns the mean of a numeric array", () => {
@@ -39,3 +39,12 @@ test("isEven returns false for odd numbers", () => {
   expect(isEven(-1)).toBe(false);
 });
 
+// ── sum ───────────────────────────────────────────────────────────────────────
+test("sum returns the total of all numbers in an array", () => {
+  expect(sum([1, 2, 3])).toBe(6);
+  expect(sum([0])).toBe(0);
+});
+
+test("sum returns 0 for an empty array", () => {
+  expect(sum([])).toBe(0);
+});
