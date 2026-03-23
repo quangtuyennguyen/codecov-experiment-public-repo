@@ -44,3 +44,7 @@ export function clamp(value, min, max) {
 export function isEven(n) {
   return n % 2 === 0;
 }
+
+export function sum(nums) {
+  return nums.reduce((acc, n) => acc + n, 0);
+}
