@@ -1,0 +1,37 @@
+{
+  "name": "@lab/website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test:storybook": "test-storybook --coverage --coverageDirectory=coverage/storybook",
+    "test:storybook:ci": "start-server-and-test 'serve storybook-static --listen 6006' http://127.0.0.1:6006 'test-storybook --coverage --coverageDirectory=coverage/storybook'"
+  },
+  "dependencies": {
+    "@lab/package-2": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "@babel/preset-react": "^7.28.5",
+    "@storybook/addon-coverage": "^1.0.5",
+    "@storybook/addon-essentials": "^8.6.15",
+    "@storybook/react": "^8.6.15",
+    "@storybook/react-vite": "^8.6.15",
+    "@storybook/test-runner": "^0.22.1",
+    "@vitejs/plugin-react": "^5.2.0",
+    "babel-jest": "^29.0.0",
+    "http-server": "^14.1.1",
+    "istanbul-merge": "^2.0.0",
+    "jest": "^29.0.0",
+    "nyc": "^17.1.0",
+    "playwright": "^1.58.2",
+    "serve": "^14.2.6",
+    "start-server-and-test": "^2.1.5",
+    "storybook": "^8.6.15",
+    "vite": "^6.4.1"
+  }
+}

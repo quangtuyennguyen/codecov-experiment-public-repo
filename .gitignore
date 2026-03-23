@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Turbo
+.turbo/
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Storybook
+storybook-static/

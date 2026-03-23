@@ -1,0 +1,24 @@
+coverage:
+  status:
+    project:
+      default:
+        target: 80%
+        threshold: 1%
+    patch:
+      default:
+        enabled: true
+
+flags:
+  website:
+    paths:
+      - apps/website/
+    carryforward: true
+  package-2:
+    paths:
+      - packages/package-2/
+    carryforward: true
+
+comment:
+  layout: "reach,diff,flags,files"
+  behavior: default
+  require_changes: false

@@ -1,0 +1,46 @@
+name: website
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/website/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "apps/website/**"
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Install Playwright browsers
+        run: pnpm --filter @lab/website exec playwright install chromium --with-deps
+
+      - name: Build Storybook
+        run: pnpm --filter @lab/website build-storybook
+
+      - name: Run Storybook tests
+        run: pnpm --filter @lab/website test:storybook:ci
+
+      - name: Upload Storybook coverage
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: apps/website/coverage/storybook/coverage-storybook.json
+          flags: website

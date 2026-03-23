@@ -1,0 +1,23 @@
+{
+	"include": [
+		"apps/website/src/**/*.{ts,tsx,js,jsx}",
+		"packages/package-2/src/**/*.{ts,tsx,js,jsx}"
+	],
+	"exclude": [
+		"**/*.test.*",
+		"**/*.spec.*",
+		"**/*.stories.*",
+		"**/stories.*",
+		"**/__tests__/**",
+		"**/__mocks__/**",
+		"**/__mock__/**",
+		"**/__stories__/**",
+		"**/mock/**",
+		"**/test/**",
+		"**/node_modules/**"
+	],
+	"reporter": [
+		"text-summary",
+		"lcov"
+	]
+}
